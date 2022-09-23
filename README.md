@@ -1,4 +1,6 @@
 # WorkflowCreator
+Working video
+https://www.loom.com/share/fce53a91c9d847b0a623ce3976b6250f
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
