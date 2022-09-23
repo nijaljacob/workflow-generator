@@ -1,0 +1,23 @@
+.dropbox {
+    height: 35px;
+    width: 150px;
+    border: 1px solid #0f7ec4;
+    background-color: white;
+    z-index: 999999;
+}
+
+.workflow_card--add {
+    &.start {
+        &:before {
+            height: 55px;
+            border-left: 2px solid #a8cade;
+            top: -55px;
+        }
+    }
+}
+
+.flow_start {
+    &.start{
+        margin-bottom: 15px;
+    }
+}

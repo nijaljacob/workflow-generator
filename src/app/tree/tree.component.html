@@ -1,0 +1,26 @@
+<section class="hl_workflow--main">
+    <ul class="flow_main">
+      <li>
+        <ul class="flow_start start">
+          <li>
+            <a class="workflow_card--new" data-toggle="tooltip" data-placement="bottom" title="Add new way to start this automation.">
+              <div class="bubble" data-toggle="modal" data-target="#new-automation-modal">
+                <p>Add new trigger</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul class="flow_inner">
+          <li dndDropzone (dndDragover)="onDragover($event)" (dndDrop)="onDrop($event, -1)">
+            <div class="workflow_card--add start" [ngClass]="list.length? '' : '--end'">
+              <a><i class='icon icon-plus'></i></a>
+            </div>
+            <!-- <div *ngIf="showDropbox" class="dropbox"></div> -->
+          </li>
+          <tree-node [list]="list" (listUpdated)="onListChange($event)"></tree-node>
+        </ul>
+      </li>
+    </ul>
+  </section>

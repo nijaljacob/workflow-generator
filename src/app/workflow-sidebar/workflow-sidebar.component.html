@@ -1,0 +1,137 @@
+<aside class="hl_workflow--sidebar">
+    <a href="#" class="hide-sidebar" id="hide-sidebar"><i class="icon icon-arrow-right-1"></i></a>
+    <div class="hl_workflow--sidebar-header">
+        <h2>Actions</h2>
+        <div class="search-form">
+            <i class="icon icon-loupe"></i>
+            <input type="text" class="form-control form-light" placeholder="Search Actions">
+        </div>
+    </div>
+    <div class="hl_workflow--sidebar-inner">
+        <div class="accordion" id="workflow-action-collapse">
+            <div class="actions-set">
+                <a class="collapsed" data-toggle="collapse" href="#actions-set1" role="button" aria-expanded="false"
+                    aria-controls="actions-set1">
+                    <span>Sending Options</span>
+                    <i class="caret icon-arrow-down-1"></i>
+                </a>
+                <div class="collapse" id="actions-set1" data-parent="#workflow-action-collapse">
+                    <ul class="actions-list">
+                        <li [dndDraggable]="'Send Email'" (dndStart)="onDragStart($event)"
+                            (dndCopied)="onDraggableCopied($event)" (dndLinked)="onDraggableLinked($event)"
+                            (dndMoved)="onDraggableMoved($event)" (dndCanceled)="onDragCanceled($event)"
+                            (dndEnd)="onDragEnd($event)"><span>Send email</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li [dndDraggable]="'Send SMS'" (dndStart)="onDragStart($event)"
+                            (dndCopied)="onDraggableCopied($event)" (dndLinked)="onDraggableLinked($event)"
+                            (dndMoved)="onDraggableMoved($event)" (dndCanceled)="onDragCanceled($event)"
+                            (dndEnd)="onDragEnd($event)"><span>Send SMS</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Send a site message</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Notify Someone</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="actions-set">
+                <a class="collapsed" data-toggle="collapse" href="#actions-set2" role="button" aria-expanded="false"
+                    aria-controls="actions-set2">
+                    <span>Conditions and workflow</span>
+                    <i class="caret icon-arrow-down-1"></i>
+                </a>
+                <div class="collapse" id="actions-set2" data-parent="#workflow-action-collapse">
+                    <ul class="actions-list">
+                        <li [dndDraggable]="'If Else'" (dndStart)="onDragStart($event)"
+                            (dndCopied)="onDraggableCopied($event)" (dndLinked)="onDraggableLinked($event)"
+                            (dndMoved)="onDraggableMoved($event)" (dndCanceled)="onDragCanceled($event)"
+                            (dndEnd)="onDragEnd($event)"><span>If / Else</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Wait</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Split</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Go to</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Goal</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Start an automation</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>End this automation</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>End other automation</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Webhook</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="actions-set">
+                <a class="collapsed" data-toggle="collapse" href="#actions-set3" role="button" aria-expanded="false"
+                    aria-controls="actions-set3">
+                    <span>Contacts</span>
+                    <i class="caret icon-arrow-down-1"></i>
+                </a>
+                <div class="collapse" id="actions-set3" data-parent="#workflow-action-collapse">
+                    <ul class="actions-list">
+                        <li><span>Subscribe</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Unsubscribe</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Convert</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Update contact</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Add tag</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Remove tag</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Add note</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Add to Facebook Custom Audience</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Remove from Facebook Custom Audience</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Adjust score</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="actions-set">
+                <a class="collapsed" data-toggle="collapse" href="#actions-set4" role="button" aria-expanded="false"
+                    aria-controls="actions-set4">
+                    <span>CRM</span>
+                    <i class="caret icon-arrow-down-1"></i>
+                </a>
+                <div class="collapse" id="actions-set4" data-parent="#workflow-action-collapse">
+                    <ul class="actions-list">
+                        <li><span>Add deal</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Update title</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Update status</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Update owner</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Update value</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Update stage</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Update custom field</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Add task</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Add note</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Complete task</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                        <li><span>Adjust score</span> <i class="icon icon-resize-plus-2"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</aside>
+<!-- END of .hl_workflow--sidebar -->

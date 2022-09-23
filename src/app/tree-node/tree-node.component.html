@@ -1,0 +1,58 @@
+<ng-container *ngFor="let item of list; let i=index">
+  <li *ngIf="item.type === 'singleFlow'">
+    <div class="workflow_card --with-icon" [ngClass]="item['class']">
+      <div class="bubble" data-popover="popover" data-content="
+                          <div class='workflow_actions'>
+                          <ul class='list-inline'>
+                              <li><a href='#' class='workflow-action' data-tooltip='tooltip' data-placement='top' title='Share'><i class='icon icon-share-2'></i></a></li>
+                              <li><a href='#' class='workflow-action' data-tooltip='tooltip' data-placement='top' title='View'><i class='icon icon-document-text'></i></a></li>
+                              <li><a href='#' class='workflow-action' data-tooltip='tooltip' data-placement='top' title='Delete'><i class='icon icon-trash'></i></a></li>
+                          </ul>
+                          </div>
+                          ">
+        <i class="far" [ngClass]="item['icon']"></i>
+        <p>{{item['name']}}</p>
+        <i class="icon-drag icon-resize-plus-2"></i>
+      </div>
+    </div>
+  </li>
+  <li *ngIf="item.type === 'splitFlow'">
+    <div [ngClass]="item['class']">
+      <span>{{item['name']}}</span>
+    </div>
+  </li>
+  <li *ngIf="!item['left'] && !item['right']" dndDropzone (dndDragover)="onDragover($event, i)"
+    (dndDrop)="onDrop($event, i)">
+    <div class="workflow_card--add" [ngClass]="list.length - 1 === i? '--end' : ''">
+      <a><i class='icon icon-plus'></i></a>
+    </div>
+  </li>
+
+  <li *ngIf="item['left'] || item['right']">
+    <ul class="flow_split">
+      <li>
+        <div class="split-left">
+          <svg width="160px" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M 0,100 C 0,0 100,100 100,0"></path>
+          </svg>
+        </div>
+        <ul class="flow_inner">
+          <!--Recusrsively calling tree node for the left path-->
+          <tree-node [list]="item['left']" (listUpdated)="listUpdated.emit(true)"></tree-node>
+        </ul>
+      </li>
+      <li>
+        <div class="split-right">
+          <svg width="160px" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M 100,100 C 100,0 0,100 0,0"></path>
+          </svg>
+        </div>
+        <ul class="flow_inner">
+          <!--Recusrsively calling tree node for the right path-->
+          <tree-node [list]="item['right']" (listUpdated)="listUpdated.emit(true)"></tree-node>
+        </ul>
+
+      </li>
+    </ul>
+  </li>
+</ng-container>
