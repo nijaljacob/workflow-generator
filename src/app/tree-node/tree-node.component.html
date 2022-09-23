@@ -1,6 +1,6 @@
 <ng-container *ngFor="let item of list; let i=index">
   <li *ngIf="item.type === 'singleFlow'">
-    <div class="workflow_card --with-icon" [ngClass]="item['class']">
+    <div class="workflow_card --with-icon" [ngClass]="item['cssClass']">
       <div class="bubble" data-popover="popover" data-content="
                           <div class='workflow_actions'>
                           <ul class='list-inline'>
@@ -17,15 +17,15 @@
     </div>
   </li>
   <li *ngIf="item.type === 'splitFlow'">
-    <div [ngClass]="item['class']">
+    <div [ngClass]="item['cssClass']">
       <span>{{item['name']}}</span>
     </div>
   </li>
-  <li *ngIf="!item['left'] && !item['right']" dndDropzone (dndDragover)="onDragover($event, i)"
-    (dndDrop)="onDrop($event, i)">
+  <li *ngIf="!item['left'] && !item['right']" dndDropzone (dndDrop)="onDrop($event, i)">
     <div class="workflow_card--add" [ngClass]="list.length - 1 === i? '--end' : ''">
       <a><i class='icon icon-plus'></i></a>
     </div>
+    <div dndPlaceholderRef class="dropbox"></div>
   </li>
 
   <li *ngIf="item['left'] || item['right']">
